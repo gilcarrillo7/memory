@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../hooks";
 
 import { selectName, selectCurrentLevel } from "../../features/ui/uiSlice";
@@ -41,7 +41,7 @@ const Game = () => {
               start ? "opacity-0" : "opacity-100 visible"
             }`}
           >
-            Hello {name}
+            Hola {name}
           </h1>
           <Spinner />
         </div>

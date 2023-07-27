@@ -23,7 +23,7 @@ const Card = ({
       ref={ref}
       className={`group h-20 sm:h-28 lg:h-36 w-full [perspective:1000px] transition duration-500 ease-in-out ${
         inView ? "opacity-100" : "opacity-0"
-      }`}
+      }  ${disable ? "pointer-events-none touch-none" : "pointer-events-auto"}`}
       style={{ transitionDelay: `${delay}ms` }}
       onClick={onClick}
     >
@@ -33,9 +33,7 @@ const Card = ({
         }`}
       >
         <div
-          className={`absolute inset-0 bg-secondary rounded-xl text-center text-tertiary text-6xl cursor-pointer ${
-            disable ? "pointer-events-none" : "pointer-events-auto"
-          }`}
+          className={`absolute inset-0 bg-secondary rounded-xl text-center text-tertiary text-6xl cursor-pointer`}
         >
           <div className="flex min-h-full flex-col items-center justify-center">
             ?

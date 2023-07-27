@@ -8,10 +8,7 @@ import {
 import { ThunkAction } from "redux-thunk";
 
 import uiReducer, { UiState } from "./features/ui/uiSlice";
-import memoryReducer, {
-  MemoryState,
-  fetchCards,
-} from "./features/memory/memorySlice";
+import memoryReducer, { MemoryState } from "./features/memory/memorySlice";
 
 const rootReducer = combineReducers({
   ui: uiReducer,
