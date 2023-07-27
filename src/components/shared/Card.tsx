@@ -23,7 +23,11 @@ const Card = ({
       ref={ref}
       className={`group h-20 sm:h-28 lg:h-36 w-full [perspective:1000px] transition duration-500 ease-in-out ${
         inView ? "opacity-100" : "opacity-0"
-      }  ${disable ? "pointer-events-none touch-none" : "pointer-events-auto"}`}
+      }  ${
+        disable || open
+          ? "pointer-events-none touch-none"
+          : "pointer-events-auto"
+      }`}
       style={{ transitionDelay: `${delay}ms` }}
       onClick={onClick}
     >

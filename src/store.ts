@@ -4,6 +4,7 @@ import {
   Action,
   Middleware,
   CombinedState,
+  PreloadedState,
 } from "@reduxjs/toolkit";
 import { ThunkAction } from "redux-thunk";
 
@@ -43,8 +44,11 @@ const store = configureStore({
     ),
 });
 
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => store;
+
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 export type Thunk = ThunkAction<void, RootState, null, Action<string>>;
+export type AppStore = ReturnType<typeof setupStore>;
 
 export default store;
