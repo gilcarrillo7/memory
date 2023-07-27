@@ -23,10 +23,8 @@ const Game = () => {
   const [start, setStart] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      dispatch(fetchCards(currentLevel));
-      setStart(true);
-    }, 1000);
+    dispatch(fetchCards(currentLevel));
+    setStart(true);
     return () => {
       setStart(false);
     };

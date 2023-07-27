@@ -13,7 +13,7 @@ const Select = ({
 }) => {
   return (
     <div className="text-2xl sm:text-3xl">
-      <label htmlFor={label}>{label}: </label>
+      <label htmlFor={label}>{label}</label>:
       <select
         id={label}
         className="bg-transparent"

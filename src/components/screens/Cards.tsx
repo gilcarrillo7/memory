@@ -24,7 +24,7 @@ const Cards = () => {
           open={card.open}
           onClick={() => handleCardClick(i)}
           disable={secondCard !== null}
-          delay={i * 25}
+          delay={i * 10}
         />
       ))}
     </div>
