@@ -6,6 +6,7 @@ import {
   fetchCards,
   selectStatus,
   selectFinished,
+  selectError,
 } from "../../features/memory/memorySlice";
 
 import Spinner from "../shared/Spinner";
@@ -19,6 +20,7 @@ const Game = () => {
   const status = useAppSelector(selectStatus);
   const finished = useAppSelector(selectFinished);
   const currentLevel = useAppSelector(selectCurrentLevel);
+  const error = useAppSelector(selectError);
 
   const [start, setStart] = useState(false);
 
@@ -42,6 +44,10 @@ const Game = () => {
             Hola {name}
           </h1>
           <Spinner />
+        </div>
+      ) : error ? (
+        <div className="w-full h-full text-danger flex justify-center items-center text-3xl">
+          Ocurrió un error al obtener las imagenes. Recarga la página.
         </div>
       ) : (
         <div className="w-full h-full">

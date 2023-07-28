@@ -84,11 +84,12 @@ export const memorySlice = createSlice({
         });
         state.cards = cards.sort((a, b) => a.index - b.index);
         state.total = animals.length;
-      }
+      } else state.error = "error";
       state.status = "idle";
     });
     builder.addCase(fetchCards.rejected, (state, { payload }) => {
       if (payload) state.error = payload.message;
+      else state.error = "error";
       state.status = "idle";
     });
   },
